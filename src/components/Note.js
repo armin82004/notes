@@ -14,8 +14,12 @@ const Note = ({ id, text, date, handleDeleteNote, handleUpdateNote }) => {
   };
 
   const handleSaveClick = () => {
-    handleUpdateNote(id, editedText);
-    setIsEditing(false);
+    if(editedText.trim().length >0){
+      handleUpdateNote(id, editedText);
+      setIsEditing(false);
+    }else{
+      alert("Your input is empty!");
+    }
   };
 
   return (
