@@ -22,26 +22,31 @@ code {
   padding: 5px 10px;
   align-items: center;
   position: fixed;
-  height: 55px;
+  height: 50px;
   width: 100%;
   border-bottom: 1px solid #3d3d3d60 ;
   z-index: 5;
 }
 
 .logo{
-  width: 2.5em;
+  width: 2.3em;
   height: fit-content;
   padding: 0 5px;
 }
 
 h1{
+  /* color: #5f6368; */
   color: #0BA952;
   padding: 0px 5px;
   font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .menu{
-  padding: 10px 12px;
+  display: flex;
+  padding: 10px;
   border-radius: 60%;
   cursor: pointer;
 }

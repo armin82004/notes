@@ -7,13 +7,13 @@ const Header = () => {
     <div className="header-container">
       <div className="menu-container">
         <span className="menu">
-          <IoMdMenu className="menu-button" size="1.5em" />
+          <IoMdMenu className="menu-button" size="1.4em" />
         </span>
         <img className="logo" src={logo} alt="logo" />
         <h1>Notes</h1>
       </div>
       <span className="menu search">
-      <IoMdSearch size="1.5em" />
+      <IoMdSearch size="1.4em" />
       </span>
     </div>
   );
