@@ -6,6 +6,7 @@ const AddNote = (handleaddnote) => {
   const [isAdding, setisAdding] = useState(false);
   const [color, setColor] = useState("");
   const [colorchoose, setcolorchoose] = useState(false);
+  const [content,setcontent] = useState('');
   function handleclickoutside() {
     setisAdding(false);
     setcolorchoose(false);
@@ -40,6 +41,9 @@ const AddNote = (handleaddnote) => {
     return ref;
   };
   const ref = Useoutsideclick(handleclickoutside);
+  function handletextarea(e){
+    setcontent(e.target.value);
+  }
   return (
     <div
       className="add-note-container"
@@ -51,7 +55,7 @@ const AddNote = (handleaddnote) => {
       {isAdding ? (
         <>
           <input className="input-note" type="text" placeholder="Title" />
-          <input className="input-note" type="text" placeholder="Take a Note..." />
+          <textarea className="input-note" onChange={(e)=>{handletextarea(e)}} type="text" placeholder="Take a Note..." />
           <div className="add-note-footer">
             {colorchoose ? (
               <>
