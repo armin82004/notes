@@ -54,7 +54,7 @@ h1{
 }
 
 .menu:hover{
-  background-color: rgba(134, 134, 134, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 .menu-container{
   display: flex;
