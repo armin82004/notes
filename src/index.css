@@ -67,7 +67,7 @@ h1{
   max-width: 70%;
   margin: 10px auto;
   flex-direction: column;
-  box-shadow: rgba(34, 34, 34, 0.35) 0px 0px 5px;
+  box-shadow: rgba(207, 207, 207, 0.35) 0px 0px 5px;
   border-radius: 10px;
   transition: height 2s;
   background-color: #0BA952;
