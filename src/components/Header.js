@@ -4,6 +4,7 @@ import logo from "../images/logo192.png";
 
 const Header = () => {
   return (
+    <div className="header">
     <div className="header-container">
       <div className="menu-container">
         <span className="menu">
@@ -15,6 +16,7 @@ const Header = () => {
       <span className="menu search">
       <IoMdSearch size="1.4em" />
       </span>
+    </div>
     </div>
   );
 };
