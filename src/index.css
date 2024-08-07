@@ -22,7 +22,6 @@ code {
   align-items: center;
   height: 50px;
   width: 100%;
-  z-index: 5;
 }
 
 .logo {
@@ -100,6 +99,9 @@ textarea{
 .header {
   padding: 10px;
   border-bottom: 1px solid #75757560;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 @media only screen and (min-width: 600px) {
   .add-note-container {
