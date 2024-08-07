@@ -6,7 +6,20 @@ const AddNote = (handleaddnote) => {
   const [isAdding, setisAdding] = useState(false);
   const [color, setColor] = useState("");
   const [colorchoose, setcolorchoose] = useState(false);
-  const [content,setcontent] = useState('');
+  const [content, setcontent] = useState("");
+  const textarearef = useRef(null);
+  useEffect(()=>{
+    const textareaheight = ()=>{
+      const textarea = textarearef.current;
+      if(textarea){
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+        console.log("scroll height: "+textarea.scrollHeight);
+        console.log('textarea height: '+textarea.style.height)
+      }
+    }
+    textareaheight();
+  },[content]);
   function handleclickoutside() {
     setisAdding(false);
     setcolorchoose(false);
@@ -20,7 +33,7 @@ const AddNote = (handleaddnote) => {
     setcolorchoose(!colorchoose);
   }
 
-  function handlecolorclick(event){
+  function handlecolorclick(event) {
     const className = event.target;
     console.log(className);
   }
@@ -41,9 +54,11 @@ const AddNote = (handleaddnote) => {
     return ref;
   };
   const ref = Useoutsideclick(handleclickoutside);
-  function handletextarea(e){
+
+  function handletextarea(e) {
     setcontent(e.target.value);
   }
+
   return (
     <div
       className="add-note-container"
@@ -55,7 +70,15 @@ const AddNote = (handleaddnote) => {
       {isAdding ? (
         <>
           <input className="input-note" type="text" placeholder="Title" />
-          <textarea className="input-note" onChange={(e)=>{handletextarea(e)}} type="text" placeholder="Take a Note..." />
+          <textarea
+          ref={textarearef}
+            className="input-note"
+            onChange={(e) => {
+              handletextarea(e);
+            }}
+            type="text"
+            placeholder="Take a Note..."
+          />
           <div className="add-note-footer">
             {colorchoose ? (
               <>
@@ -68,7 +91,7 @@ const AddNote = (handleaddnote) => {
                   >
                     <IoColorPaletteOutline size="1.2em" />
                   </div>
-                  <div className="color-dusk" ></div>
+                  <div className="color-dusk"></div>
                   <div className="color-storm"></div>
                   <div className="color-mint"></div>
                   <div className="color-coral"></div>
@@ -99,7 +122,11 @@ const AddNote = (handleaddnote) => {
         </>
       ) : (
         <>
-          <input className="input-note" type="text" placeholder="Take a Note..." />
+          <input
+            className="input-note"
+            type="text"
+            placeholder="Take a Note..."
+          />
         </>
       )}
     </div>
